@@ -9,8 +9,8 @@ A collection of Python scripts for interacting with the Cardcast API at cardcast
 
 ## Usage
 Type <code>python cardcast</code> for usage info.
-
-<code>Options:
+```
+Options:
   --version             show program's version number and exit  
   -h, --help            show this help message and exit  
   -t TASK, --task=TASK  [REQUIRED] Valid tasks are [deckslist, deckinfo, cards, blacks, whites]  
@@ -24,4 +24,5 @@ Type <code>python cardcast</code> for usage info.
   -n NUM_RESULTS, --num-results=NUM_RESULTS  
                         The number of results to return with the deckslist task. [default: 50]  
   -o OFFSET, --offset=OFFSET  
-                        The number of decks to offset the result window returned by the deckslist task. [default: 0]<code/>  
+                        The number of decks to offset the result window returned by the deckslist task. [default: 0]
+````
