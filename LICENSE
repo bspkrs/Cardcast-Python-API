@@ -23,8 +23,10 @@ SOFTWARE.
 
 ADDITIONAL NOTE FROM THE DEVELOPERS OF CARDCASTGAME.COM ON THE USE OF THEIR API
 
-The Cardcast API isn't public, but we don't have a problem with people tapping 
-into it for small projects. Our only requirements (right now) are:
+The Cardcast API isn't public, but we (the developers of cardcastgame.com) don't 
+have a problem with people tapping into it for small projects. 
+
+Our only requirements (right now) are:
 
 A) Make users aware you are using Cardcast decks.
 B) Direct users to our website for any searching/discovery of play codes 
@@ -32,6 +34,6 @@ B) Direct users to our website for any searching/discovery of play codes
 C) If possible, implement some simple form of caching. The decks aren't immutable 
    (people can edit decks at anytime and the code remains the same), so you 
    shouldn't cache a deck for too long. One popular site caches for 15 minutes.
-D) Use at your own risk! If we go down or are hacked or whatever, 
-   we can't be held liable for any impact on your app. We also reserve the 
-   right to revoke access at anytime.
+D) Use at your own risk! If cardcastgame.com goes down or is hacked or whatever, 
+   we (the developers of cardcastgame.com) can't be held liable for any impact on 
+   your app. We also reserve the right to revoke access at anytime.
