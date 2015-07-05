@@ -38,7 +38,15 @@
 #    we (the developers of cardcastgame.com) can't be held liable for any impact on
 #    your app. We also reserve the right to revoke access at anytime.
 
-import urllib2, json
+
+import json
+import sys
+
+if sys.version_info.major == 2:
+    from urllib2 import Request, urlopen
+else:
+    from urllib.request import Request, urlopen
+
 from . import constants
 
 
@@ -50,9 +58,9 @@ def get_remote_json(url):
     :type url: str
     :rtype: dict
     """
-    req = urllib2.Request(url)
-    r = urllib2.urlopen(req)
-    ret = json.loads(r.read())
+    req = Request(url)
+    r = urlopen(req)
+    ret = json.loads(r.read().decode("utf-8", "replace"))
     if 'id' in ret and ret['id'] == constants.RESOURCE_NOT_FOUND:
         raise Exception(ret['message'] + ': ' + url)
     return ret
@@ -226,7 +234,7 @@ def get_deck_blacks_json(deck_id):
     return get_json_value(get_remote_json(constants.CARDS_URL % deck_id), 'calls')
 
 
-def get_deck_cards_json(deck_id):
+def get_deck_whites_json(deck_id):
     """Gets json white card data.
 
     list of dict
