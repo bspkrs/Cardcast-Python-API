@@ -39,4 +39,4 @@
 #    your app. We also reserve the right to revoke access at anytime.
 
 __author__ = 'bspkrs'
-__version__ = '1.0'
+__version__ = '1.1'
