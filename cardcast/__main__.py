@@ -39,6 +39,8 @@
 #    your app. We also reserve the right to revoke access at anytime.
 
 
+from __future__ import print_function
+
 from optparse import OptionParser
 from cardcast import __version__, api, constants
 
@@ -61,26 +63,26 @@ def main():
         exit(1)
 
     if not options.task in ['deckslist', 'deckinfo', 'cards', 'blacks', 'whites']:
-        print 'Invalid task specified: %s' % options.task
+        print('Invalid task specified: %s' % options.task)
         parser.print_help()
         exit(2)
 
     if options.task in ['deckinfo', 'cards', 'blacks', 'whites']:
         if not options.deck:
-            print 'Task %s requires a deck ID to be specified using the -d option.' % options.task
+            print('Task %s requires a deck ID to be specified using the -d option.' % options.task)
             parser.print_help()
             exit(3)
 
         if options.task == 'deckinfo':
-            print api.get_deck_info_json(options.deck)
+            print(api.get_deck_info_json(options.deck))
         elif options.task == 'cards':
-            print api.get_deck_cards_json(options.deck)
+            print(api.get_deck_cards_json(options.deck))
         elif options.task == 'blacks':
-            print api.get_deck_blacks_json(options.deck)
+            print(api.get_deck_blacks_json(options.deck))
         elif options.task == 'whites':
-            print api.get_deck_whites_json(options.deck)
+            print(api.get_deck_whites_json(options.deck))
     else:
-        print api.get_deck_list_json(search=options.search, author=options.author, category=options.category, limit=options.num_results, offset=options.offset)
+        print(api.get_deck_list_json(search=options.search, author=options.author, category=options.category, limit=options.num_results, offset=options.offset))
 
 
 
